@@ -1,0 +1,19 @@
+#data_container {
+  margin: '15px'
+}
+
+#list {
+  list-style-type: none;
+  padding: 0px
+}
+
+#temp {
+  font-size: 60px;
+  position: relative;
+  top: -10px
+}
+
+#units {
+  position: relative;
+  top: -40px
+}

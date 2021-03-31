@@ -1,20 +1,21 @@
 import React from 'react';
 
-function WeatherData () {
+function WeatherData (props) {
+  console.log('PROPS',props)
   return (
     <div style = {{
       margin: '15px'
     }}>
       <img alt = 'sun'></img>
-      <span>+18 C|F</span>
+      {/* <span> {Math.floor(props.data.main.temp)} °C|°F</span> */}
 
       <ul style = {{
         listStyleType: 'none',
         padding: '0px'
         }}>
-        <li>Sunny</li>
-        <li>Humidity: 20%</li>
-        <li>Wind: 3 km/hr</li>
+        <li>{props.data.weather[0].main}</li>
+        <li>Humidity: {props.data.main.humidity}%</li>
+        <li>Wind: {Math.floor(props.data.wind.speed)} km/hr</li>
       </ul>
 
     </div>

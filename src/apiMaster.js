@@ -7,7 +7,7 @@ const apiMaster = {
   },
 
   getWeather: (city) => {
-    return axios.get(`${url}/forecast`, { params: { city: city }});
+    return axios.get(`${url}/weather`, { params: { city: city }});
   },
 }
 

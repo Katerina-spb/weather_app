@@ -1,6 +1,7 @@
-import React from 'react';
+function City (props) {
+  var date = new Date();
+  var formatDate = date.toLocaleDateString(undefined, { month: 'long', day: 'numeric' })
 
-function City () {
   return (
     <div style = {{
       display: 'flex',
@@ -12,12 +13,11 @@ function City () {
       <span style ={{
         fontSize: '30px',
         marginBottom: '10px'
-
       }}>
-        Austin
+        {props.city}
       </span>
-      <span>11:05</span>
-      <span>Tuesday March 31</span>
+      <span>{date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+      <span>{formatDate}</span>
 
     </div>
   )

@@ -1,6 +1,4 @@
-import React from 'react';
-
-function DailyForecast () {
+function DailyForecast (props) {
   return (
     <div style = {{
       display: 'flex',

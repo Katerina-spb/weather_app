@@ -1,14 +1,14 @@
 import React from 'react';
 import DailyForecast from './DailyForecast.js';
 
-function Forecast () {
+function Forecast (props) {
   return (
     <div style = {{display: 'flex'}}>
-      <DailyForecast />
-      <DailyForecast />
+      <DailyForecast forecast = {props.forecastData[0]}/>
+      <DailyForecast forecast = {props.forecastData[1]}/>
 
-      <DailyForecast />
-      <DailyForecast />
+      <DailyForecast forecast = {props.forecastData[2]}/>
+      <DailyForecast forecast = {props.forecastData[3]}/>
     </div>
   )
 }

@@ -4,26 +4,15 @@ import './WeatherData.css';
 
 function WeatherData (props) {
 
-  //const [units, setUnits] = useState('celsius');
   const [isCelsius, setIsCelsius] = useState(true);
   let celsius = Math.round(props.data.main.temp);
   let fahrenheit = Math.round((props.data.main.temp * 9) / 5 + 32);
-
-  // function toCelsius (e) {
-  //   e.preventDefault();
-  //   setUnits('celsius');
-  // }
-  // function toFahrenheit (e) {
-  //   e.preventDefault();
-  //   setUnits('fahrenheit');
-  // }
 
   function switchUnits (e) {
     e.preventDefault();
     setIsCelsius(!isCelsius);
   }
 
-  console.log('PROPS',props)
   return (
     <div id = 'data_container'>
 

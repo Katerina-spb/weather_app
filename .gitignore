@@ -2,6 +2,7 @@
 
 
 config/config.js
+./server.js
 
 # Logs
 logs

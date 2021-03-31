@@ -6,9 +6,9 @@ function Forecast (props) {
     <div style = {{display: 'flex'}}>
       <DailyForecast forecast = {props.forecastData[0]}/>
       <DailyForecast forecast = {props.forecastData[1]}/>
-
       <DailyForecast forecast = {props.forecastData[2]}/>
       <DailyForecast forecast = {props.forecastData[3]}/>
+      <DailyForecast forecast = {props.forecastData[4]}/>
     </div>
   )
 }

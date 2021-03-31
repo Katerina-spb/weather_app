@@ -11,21 +11,19 @@ function App() {
   const [forecast, setForecast] = useState(false);
   const [city, setCity] = useState('Austin');
 
-  const getWeather = () => {
+  const getForecast = () => {
     apiMaster.getForecast(city)
     .then((response) => {
       setForecast(response.data.list);
-      console.log(response.data.list)
     })
     .catch((err) => {
       console.log(err);
     })
   }
-  const getForecast = () => {
+  const getWeather = () => {
     apiMaster.getWeather(city)
     .then((response) => {
       setCurrentWeather(response.data);
-      console.log(response.data)
     })
     .catch((err) => {
       console.log(err);
@@ -40,7 +38,7 @@ function App() {
     getForecast();
   }, []);
 
-  if (currentWeather) {
+  if (currentWeather && forecast) {
     return (
       <div className="App">
         <Search />

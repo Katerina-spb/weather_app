@@ -1,4 +1,6 @@
-function DailyForecast (props) {
+import WeatherIcon from "./WeatherIcon";
+
+function DailyForecast ({forecast}) {
   return (
     <div style = {{
       display: 'flex',
@@ -6,9 +8,12 @@ function DailyForecast (props) {
       margin: '15px',
       }}>
 
-      <span>13:00</span>
-      <img alt ='sunny'></img>
-      <span>20 C</span>
+      {new Date(forecast.dt * 1000).getHours()}:00
+      <WeatherIcon
+        size = {50}
+        iconNum={forecast.weather[0].icon}
+      />
+      {Math.round(forecast.main.temp)}°C
 
     </div>
   )

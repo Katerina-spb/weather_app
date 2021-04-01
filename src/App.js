@@ -10,33 +10,30 @@ function App() {
   const [currentWeather, setCurrentWeather] = useState(false);
   const [forecast, setForecast] = useState(false);
   const [city, setCity] = useState('Austin');
-  const [timezone, setTimezone] = useState('');
-
-  const getForecast = () => {
-    apiMaster.getForecast(city)
-    .then((response) => {
-      setForecast(response.data.list);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }
-  const getWeather = () => {
-    apiMaster.getWeather(city)
-    .then((response) => {
-      setCurrentWeather(response.data);
-      //console.log(response.data)
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }
 
   useEffect(() => {
+    const getWeather = () => {
+      apiMaster.getWeather(city)
+      .then((response) => {
+        setCurrentWeather(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+    }
     getWeather();
   }, [city]);
 
   useEffect(() => {
+    const getForecast = () => {
+      apiMaster.getForecast(city)
+      .then((response) => {
+        setForecast(response.data.list);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+    }
     getForecast();
   }, [city]);
 

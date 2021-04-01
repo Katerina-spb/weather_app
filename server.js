@@ -2,7 +2,7 @@ const axios = require('axios');
 const express = require('express');
 const app = express();
 const path = require('path');
-const port = 3001;
+const port = 3000;
 
 const config = require('./config/config.js');
 const url = config.server;
@@ -10,8 +10,12 @@ const token = config.token;
 const cors = require('cors');
 
 
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.get('/forecast', (req, res) => {
   var city = req.query.city;

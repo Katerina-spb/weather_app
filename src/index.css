@@ -5,8 +5,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#D5AA96;
+  /* background-image: linear-gradient(#42265B 30%,#d6ab97); */
+  background-image: linear-gradient(to bottom, #42265b, #4a2b66, #522f71, #5b347c, #633988, #7a3e89, #8f448a, #a24c8a, #b95f82, #c77680, #cf8f86, #d3a895);
+  background-repeat: no-repeat;
+
 }
 
+/* body {
+  background-image: linear-gradient(#6e3f98 9%,#d6ab97);
+  background-repeat: no-repeat;
+  background-size: auto;
+ } */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

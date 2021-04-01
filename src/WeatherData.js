@@ -18,7 +18,7 @@ function WeatherData (props) {
 
       <WeatherIcon iconNum={props.data.weather[0].icon} />
       {isCelsius
-      ? <span id = 'temp'> {celsius}<span id = 'units'> °C|<a href = '/' onClick = {switchUnits}>°F</a></span></span>
+      ? <span id = 'temp'> {celsius}<span id = 'units'> °C | <a href = '/' onClick = {switchUnits}>°F</a></span></span>
       : <span id = 'temp'> {fahrenheit}<span id = 'units'> <a href = '/' onClick = {switchUnits}>°C</a>|°F </span></span>
       }
 

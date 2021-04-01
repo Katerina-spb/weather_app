@@ -1,6 +1,11 @@
-.App {
-  margin: 50px
 
+.App {
+  max-width: 600px;
+  margin: 50px;
+  padding: 30px;
+  background-color: #ffffff1f;
+  border-radius: 10px;
+  color: white
 }
 
 .city_weather {

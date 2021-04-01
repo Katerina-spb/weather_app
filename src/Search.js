@@ -17,7 +17,9 @@ function Search (props)  {
       placeholder = 'Search for your city...'
       style={{
         maxWidth: 500,
-        marginBottom: '20px'
+        marginBottom: '20px',
+        backgroundColor: '#ffffff1f',
+        color: 'white'
       }}
       />
     </div>

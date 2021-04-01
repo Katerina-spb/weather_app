@@ -4,11 +4,11 @@ import DailyForecast from './DailyForecast.js';
 function Forecast (props) {
   return (
     <div style = {{display: 'flex'}}>
-      <DailyForecast forecast = {props.forecastData[0]}/>
-      <DailyForecast forecast = {props.forecastData[1]}/>
-      <DailyForecast forecast = {props.forecastData[2]}/>
-      <DailyForecast forecast = {props.forecastData[3]}/>
-      <DailyForecast forecast = {props.forecastData[4]}/>
+      <DailyForecast forecast = {props.forecastData[0]} timezone = {props.timezone}/>
+      <DailyForecast forecast = {props.forecastData[1]} timezone = {props.timezone}/>
+      <DailyForecast forecast = {props.forecastData[2]} timezone = {props.timezone}/>
+      <DailyForecast forecast = {props.forecastData[3]} timezone = {props.timezone}/>
+      <DailyForecast forecast = {props.forecastData[4]} timezone = {props.timezone}/>
     </div>
   )
 }

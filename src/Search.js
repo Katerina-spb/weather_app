@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SearchBar from 'material-ui-search-bar';
 
-function Search ()  {
+function Search (props)  {
+
+  const [input, setInput] = useState('');
+
+  function handleChange (val) {
+    setInput(val);
+  }
+
   return (
     <div>
       <SearchBar
+      onChange = {(value) => {handleChange(value)}}
+      onRequestSearch = {() => {props.handleSearch(input)}}
       placeholder = 'Search for your city...'
       style={{
         maxWidth: 500,

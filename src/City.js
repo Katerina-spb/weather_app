@@ -1,6 +1,18 @@
+import helpers from './helpers.js'
+
 function City (props) {
-  var date = new Date();
-  var formatDate = date.toLocaleDateString(undefined, { month: 'long', day: 'numeric' })
+  let timezone = props.timezone;
+
+  // function getDate (timezone) {
+  //   let date = new Date();
+  //   let offset = date.getTimezoneOffset()* 60 * 1000;
+  //   var ms = date.getTime() + offset + timezone * 1000;
+  //   var newDate = new Date(ms);
+  //   return newDate;
+  // }
+
+  var adjustedDate = helpers.getDate(timezone);
+  var formatDate = adjustedDate.toLocaleDateString(undefined, { month: 'long', day: 'numeric' })
 
   return (
     <div style = {{
@@ -16,7 +28,7 @@ function City (props) {
       }}>
         {props.city}
       </span>
-      <span>{date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
+      <span>{adjustedDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</span>
       <span>{formatDate}</span>
 
     </div>

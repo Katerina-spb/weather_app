@@ -1,6 +1,10 @@
-import WeatherIcon from "./WeatherIcon";
+import WeatherIcon from './WeatherIcon';
+import helpers from './helpers.js';
 
-function DailyForecast ({forecast}) {
+function DailyForecast ({forecast, timezone}) {
+  let inputDate = new Date(forecast.dt * 1000);
+  let adjustedDate = helpers.getDate(timezone, inputDate);
+
   return (
     <div style = {{
       display: 'flex',
@@ -8,7 +12,7 @@ function DailyForecast ({forecast}) {
       margin: '15px',
       }}>
 
-      {new Date(forecast.dt * 1000).getHours()}:00
+      {adjustedDate.getHours()}:00
       <WeatherIcon
         size = {50}
         iconNum={forecast.weather[0].icon}

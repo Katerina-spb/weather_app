@@ -10,6 +10,7 @@ function App() {
   const [currentWeather, setCurrentWeather] = useState(false);
   const [forecast, setForecast] = useState(false);
   const [city, setCity] = useState('Austin');
+  const [timezone, setTimezone] = useState('');
 
   const getForecast = () => {
     apiMaster.getForecast(city)
@@ -24,6 +25,7 @@ function App() {
     apiMaster.getWeather(city)
     .then((response) => {
       setCurrentWeather(response.data);
+      //console.log(response.data)
     })
     .catch((err) => {
       console.log(err);
@@ -32,21 +34,25 @@ function App() {
 
   useEffect(() => {
     getWeather();
-  }, []);
+  }, [city]);
 
   useEffect(() => {
     getForecast();
-  }, []);
+  }, [city]);
+
+  function handleSearch (newCity) {
+    setCity(newCity);
+  }
 
   if (currentWeather && forecast) {
     return (
       <div className="App">
-        <Search />
+        <Search handleSearch = {handleSearch}/>
         <div className = 'city_weather'>
-          <City city = {city} />
+          <City city = {city} timezone = {currentWeather.timezone}/>
           <WeatherData data = {currentWeather}/>
         </div>
-        <Forecast forecastData = {forecast} />
+        <Forecast forecastData = {forecast} timezone = {currentWeather.timezone}/>
       </div>
     );
   } else {

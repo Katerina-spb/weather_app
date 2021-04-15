@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = 'http://localhost:3001'
+const url = 'https://w-data.netlify.app/.netlify/functions/app';
 
 const apiMaster = {
   getForecast: (city) => {
